@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* Golden Ratios */
+    --golden-ratio-a: 00.056;
+    --golden-ratio-b: 00.090;
+    --golden-ratio-c: 00.146;
+    --golden-ratio-d: 00.236;
+    --golden-ratio-e: 00.382;
+    --golden-ratio-f: 00.618;
+    --golden-ratio-0: 01.000;
+    --golden-ratio-1: 01.618;
+    --golden-ratio-2: 02.618;
+    --golden-ratio-3: 04.236;
+    --golden-ratio-4: 06.854;
+    --golden-ratio-5: 11.090;
+    --golden-ratio-6: 17.944;
+    --golden-ratio-7: 29.034;
+    --golden-ratio-8: 46.979;
+    --golden-ratio-9: 76.013;
+
+    /* Golden Ratios In REM */
+    --gr-rem-a: calc(1rem * var(--golden-ratio-a));
+    --gr-rem-b: calc(1rem * var(--golden-ratio-b));
+    --gr-rem-c: calc(1rem * var(--golden-ratio-c));
+    --gr-rem-d: calc(1rem * var(--golden-ratio-d));
+    --gr-rem-e: calc(1rem * var(--golden-ratio-e));
+    --gr-rem-f: calc(1rem * var(--golden-ratio-f));
+    --gr-rem-0: calc(1rem * var(--golden-ratio-0));
+    --gr-rem-1: calc(1rem * var(--golden-ratio-1));
+    --gr-rem-2: calc(1rem * var(--golden-ratio-2));
+    --gr-rem-3: calc(1rem * var(--golden-ratio-3));
+    --gr-rem-4: calc(1rem * var(--golden-ratio-4));
+    --gr-rem-5: calc(1rem * var(--golden-ratio-5));
+    --gr-rem-6: calc(1rem * var(--golden-ratio-6));
+    --gr-rem-7: calc(1rem * var(--golden-ratio-7));
+    --gr-rem-8: calc(1rem * var(--golden-ratio-8));
+    --gr-rem-9: calc(1rem * var(--golden-ratio-9));
+
+    /* Common Colors */
+    --color-0: #1f1f1f;
+    --color-1: #ffbe00;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    background-color: black;
+}
+
+.parallax-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    background-image: url('/img/Background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: all 0.2s;
+}
+
+.main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Common Classes Section Start */
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Common Classes Section End */
+
+/* Hero Section Start */
+#hero {
+    position: relative;
+    z-index: 1;
+}
+
+#hero::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: black;
+    opacity: 0.3;
+}
+
+#hero .hero {
+    max-width: calc(1920px * var(--golden-ratio-f));
+
+    margin: 0 auto;
+    padding: 0 var(--gr-rem-3);
+    justify-content: flex-start;
+}
+
+#hero h1 {
+    /* Hero Text */
+    position: relative;
+    width: fit-content;
+
+    display: block;
+
+    font-size: var(--gr-rem-2);
+    font-weight: 700;
+
+    color: transparent;
+
+    animation: text_reveal .5s ease forwards;
+}
+
+#hero h1:nth-child(1) {
+    animation-delay: 1s;
+}
+
+#hero h1:nth-child(2) {
+    animation-delay: 2s;
+}
+
+#hero h1:nth-child(3) {
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 3s;
+}
+
+#hero h1 span {
+    /* Hero Text Reveal Box */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 0;
+
+    background-color: var(--color-1);
+
+    animation: text_reveal_box 1s ease;
+}
+
+#hero h1:nth-child(1) span {
+    animation-delay: 0.5s;
+}
+
+#hero h1:nth-child(2) span {
+    animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(3) span {
+    animation-delay: 2.5s;
+}
+
+#hero .cta {
+    /* Resume Download Button */
+    display: inline-block;
+    margin-top: var(--gr-rem-1);
+    padding: var(--gr-rem-0) var(--gr-rem-1);
+    border: var(--gr-rem-d) solid var(--color-1);
+
+    font-weight: 600;
+    font-size: var(--gr-rem-1);
+    text-transform: uppercase;
+    letter-spacing: var(--gr-rem-b);
+
+    color: white;
+    background-color: transparent;
+
+    transition: .3s ease;
+    transition-property: color, background-color;
+}
+
+#hero .cta:hover {
+    background-color: var(--color-1);
+}
+
+/* Hero Section End */
+
+/* Keyframes Start */
+
+@keyframes text_reveal {
+    100% {
+        color: white;
+    }
+}
+
+@keyframes text_reveal_name {
+    100% {
+        color: var(--color-1);
+    }
+}
+
+@keyframes text_reveal_box {
+    50% {
+        left: 0;
+        width: 100%;
+    }
+
+    100% {
+        left: 100%;
+        width: 0;
+    }
+}
+
+/* Keyframes End*/
