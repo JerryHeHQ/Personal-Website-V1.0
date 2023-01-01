@@ -42,12 +42,11 @@ function getHiddenHeight(backgroundAspectRatio, visibleAspectRatio) {
 }
 // Parallax Section End
 
-// Scroll Animation Start
+// Skills Section Scroll Animation Start
 const skillItemObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show-skill-item');
-            console.log('shown')
         } else {
             entry.target.classList.remove('show-skill-item');
         }
@@ -56,4 +55,19 @@ const skillItemObserver = new IntersectionObserver((entries) => {
 
 const hiddenSkills = document.querySelectorAll('.hide-skill-item');
 hiddenSkills.forEach((element) => skillItemObserver.observe(element));
-// Scroll Animation End
+// Skills Section Scroll Animation End
+
+// Projects Section Scroll Animation Start
+const projectItemObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-project-item');
+        } else {
+            entry.target.classList.remove('show-project-item');
+        }
+    });
+});
+
+const hiddenProjects = document.querySelectorAll('.hide-project-item');
+hiddenProjects.forEach((element) => projectItemObserver.observe(element));
+// Projects Section Scroll Animation End

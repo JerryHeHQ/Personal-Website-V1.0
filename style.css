@@ -69,6 +69,17 @@ body {
     background-color: black;
 }
 
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    font-size: var(--gr-rem-0);
+    text-align: left;
+}
+
 .parallax-background {
     position: fixed;
     top: 0;
@@ -126,15 +137,22 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.section-title {
+    margin-bottom: var(--gr-rem-0);
+
+    font-size: var(--gr-rem-3);
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
 }
 
-p {
-    font-size: var(--gr-rem-0);
-    text-align: left;
+.section-title span {
+    color: var(--color-1);
+}
+
+.section-spacer {
+    min-height: calc(var(--golden-ratio-a) * 100vh);
 }
 
 /* Common Classes Section End */
@@ -249,9 +267,6 @@ p {
 
 /* Skills Section Start */
 
-#skills {
-}
-
 #skills .skills {
     max-width: calc(1920px * var(--golden-ratio-f));
 
@@ -260,20 +275,6 @@ p {
     flex-direction: column;
 
     text-align: center;
-}
-
-#skills .section-title {
-    margin-bottom: var(--gr-rem-0);
-
-    font-size: var(--gr-rem-3);
-    font-weight: 500;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-}
-
-#skills .section-title span {
-    color: var(--color-1);
 }
 
 #skills .skill-top p {
@@ -306,6 +307,7 @@ p {
     border-radius: var(--gr-rem-0);
 
     background-color: var(--color-2);
+    overflow: hidden;
 }
 
 #skills .skill-item-header {
@@ -329,7 +331,6 @@ p {
 #skills .skill-item h2 {
     font-size: var(--gr-rem-2);
     font-weight: 800;
-    text-transform: uppercase;
 }
 
 #skills .skill-item p {
@@ -338,7 +339,6 @@ p {
 
     background-color: var(--color-3);
 }
-
 
 /* Skill Section Animations */
 .hide-skill-item {
@@ -371,6 +371,139 @@ p {
 }
 
 /* Skills Section End */
+
+/* Projects Section Start */
+
+#projects .projects {
+    max-width: calc(1920px * var(--golden-ratio-f));
+
+    margin: 0 auto;
+    padding: var(--gr-rem-0) 0;
+    flex-direction: column;
+}
+
+#projects .all-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#projects .project-item {
+    display: flex;
+    /* flex-basis: calc(var(--golden-ratio-f) * 100% + (50% - var(--golden-ratio-f) * 50%)); */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: var(--gr-rem-0) var(--gr-rem-3);
+    border-radius: var(--gr-rem-0);
+
+    background-color: var(--color-2);
+    overflow: hidden;
+}
+
+#projects .project-info {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-0) var(--gr-rem-1);
+
+    transition: 1s ease;
+}
+
+#projects .project-info h1 {
+    font-size: var(--gr-rem-2);
+    font-weight: 800;
+
+    transition: 1s ease;
+}
+
+#projects .project-info h2 {
+    margin-top: var(--gr-rem-d);
+
+    font-size: var(--gr-rem-1);
+    font-weight: 500;
+
+    transition: 1s ease;
+    transition-delay: 0.25s;
+}
+
+#projects .project-info p {
+    margin-top: var(--gr-rem-c);
+
+    transition: 1s ease;
+    transition-delay: 0.5s;
+}
+
+#projects .project-img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: var(--gr-rem-0);
+
+    font-size: 0rem;
+
+    transition: 2s ease;
+}
+
+#projects .project-img img {
+    transition: .3s ease;
+}
+
+#projects .project-item:hover .project-img img {
+    transform: scale(1.1);
+}
+
+/* Project Section Animations */
+.hide-project-item {
+    opacity: 0;
+}
+
+.show-project-item {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.hide-project-item .project-info h1 {
+    translate: -100%;
+}
+
+.show-project-item .project-info h1 {
+    translate: 0;
+}
+
+.hide-project-item .project-info h2 {
+    translate: -100%;
+}
+
+.show-project-item .project-info h2 {
+    translate: 0;
+}
+
+.hide-project-item .project-info p {
+    translate: -150%;
+}
+
+.show-project-item .project-info p {
+    translate: 0;
+}
+
+.hide-project-item .project-img {
+    translate: 0 100%;
+}
+
+.show-project-item .project-img {
+    translate: 0;
+}
+
+
+/* Projects Section End*/
 
 /* Keyframes Start */
 
