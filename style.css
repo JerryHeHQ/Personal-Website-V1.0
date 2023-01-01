@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
 
 :root {
     /* Golden Ratios */
@@ -40,6 +41,8 @@
     /* Common Colors */
     --color-0: #1f1f1f;
     --color-1: #ffbe00;
+    --color-2: #f2f2f2;
+    --color-3: #e6e6e6;
 
 }
 
@@ -84,6 +87,21 @@ body {
     transition: all 0.2s;
 }
 
+.parallax-background::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: black;
+    opacity: 0.3;
+}
+
 .main {
     position: relative;
     z-index: 1;
@@ -99,6 +117,26 @@ body {
     justify-content: center;
 }
 
+.glass-background {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    font-size: var(--gr-rem-0);
+    text-align: left;
+}
+
 /* Common Classes Section End */
 
 /* Hero Section Start */
@@ -107,7 +145,7 @@ body {
     z-index: 1;
 }
 
-#hero::after {
+/* #hero::after {
     content: '';
 
     position: absolute;
@@ -120,7 +158,7 @@ body {
 
     background-color: black;
     opacity: 0.3;
-}
+} */
 
 #hero .hero {
     max-width: calc(1920px * var(--golden-ratio-f));
@@ -208,6 +246,131 @@ body {
 }
 
 /* Hero Section End */
+
+/* Skills Section Start */
+
+#skills {
+}
+
+#skills .skills {
+    max-width: calc(1920px * var(--golden-ratio-f));
+
+    margin: 0 auto;
+    padding: var(--gr-rem-0) 0;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+#skills .section-title {
+    margin-bottom: var(--gr-rem-0);
+
+    font-size: var(--gr-rem-3);
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+#skills .section-title span {
+    color: var(--color-1);
+}
+
+#skills .skill-top p {
+    margin: var(--gr-rem-0) var(--gr-rem-3);
+
+
+    font-size: var(--gr-rem-1);
+    font-weight: 500;
+    line-height: var(--gr-rem-1);
+    text-align: left;
+    color: white;
+}
+
+#skills .skill-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: var(--gr-rem-0);
+}
+
+#skills .skill-item {
+    display: flex;
+    /* flex-basis: calc(var(--golden-ratio-f) * 100% + (50% - var(--golden-ratio-f) * 50%)); */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: var(--gr-rem-0) var(--gr-rem-3);
+    border-radius: var(--gr-rem-0);
+
+    background-color: var(--color-2);
+}
+
+#skills .skill-item-header {
+    display: flex;
+    align-items: center;
+    column-gap: var(--gr-rem-1);
+
+    padding: var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-0) var(--gr-rem-1);
+}
+
+#skills .skill-item .icon {
+    height: calc(var(--gr-rem-4) * 0.8755);
+    width: calc(var(--gr-rem-4) * 0.8755);
+}
+
+#skills .skill-item .icon i {
+    font-size: var(--gr-rem-4);
+    line-height: calc(var(--gr-rem-4) * 0.8755);
+}
+
+#skills .skill-item h2 {
+    font-size: var(--gr-rem-2);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+#skills .skill-item p {
+    padding: var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-1);
+    border-radius: 0 0 var(--gr-rem-0) var(--gr-rem-0);
+
+    background-color: var(--color-3);
+}
+
+
+/* Skill Section Animations */
+.hide-skill-item {
+    opacity: 0;
+    transition: all 1s;
+    scale: var(--golden-ratio-a);
+}
+
+.hide-skill-item:nth-child(odd) {
+    translate: -50vw;
+}
+
+.hide-skill-item:nth-child(even) {
+    translate: 50vw;
+}
+
+.show-skill-item {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    scale: 1;
+}
+
+.show-skill-item:nth-child(odd) {
+    translate: 0vw;
+}
+
+.show-skill-item:nth-child(even) {
+    translate: 0vw;
+}
+
+/* Skills Section End */
 
 /* Keyframes Start */
 

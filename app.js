@@ -1,3 +1,4 @@
+// Parallax Section Start
 document.addEventListener('DOMContentLoaded', function () {
     backgroundParallax();
 });
@@ -39,3 +40,20 @@ function getHiddenHeight(backgroundAspectRatio, visibleAspectRatio) {
     visibleHeight = document.documentElement.clientHeight;
     return backgroundAspectRatio * visibleWidth - visibleHeight;
 }
+// Parallax Section End
+
+// Scroll Animation Start
+const skillItemObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-skill-item');
+            console.log('shown')
+        } else {
+            entry.target.classList.remove('show-skill-item');
+        }
+    });
+});
+
+const hiddenSkills = document.querySelectorAll('.hide-skill-item');
+hiddenSkills.forEach((element) => skillItemObserver.observe(element));
+// Scroll Animation End
