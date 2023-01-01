@@ -71,3 +71,18 @@ const projectItemObserver = new IntersectionObserver((entries) => {
 const hiddenProjects = document.querySelectorAll('.hide-project-item');
 hiddenProjects.forEach((element) => projectItemObserver.observe(element));
 // Projects Section Scroll Animation End
+
+// About Section Scroll Animation Start
+const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-about');
+        } else {
+            entry.target.classList.remove('show-about');
+        }
+    });
+});
+
+const hiddenAbout = document.querySelectorAll('.hide-about');
+hiddenAbout.forEach((element) => aboutObserver.observe(element));
+// About Section Scroll Animation End
