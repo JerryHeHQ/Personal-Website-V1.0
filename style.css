@@ -38,11 +38,18 @@
     --gr-rem-8: calc(1rem * var(--golden-ratio-8));
     --gr-rem-9: calc(1rem * var(--golden-ratio-9));
 
-    /* Common Colors */
-    --color-0: #1f1f1f;
-    --color-1: #ffbe00;
-    --color-2: #f2f2f2;
-    --color-3: #e6e6e6;
+    /* Colors */
+    --color-0: hsl(0, 0%, 0%);
+    --color-1: hsl(0, 0%, 6%);
+    --color-2: hsl(0, 0%, 12%);
+    --color-3: hsl(0, 0%, 18%);
+    --accent-0: hsl(45, 100%, 50%);
+    --accent-1: hsl(45, 100%, 36%);
+
+    /* Gradients */
+    --accent-gradient-0: linear-gradient(135deg, var(--accent-0), var(--accent-1));
+    --accent-gradient-radial-0: radial-gradient(circle at top left, var(--accent-0), var(--accent-1));
+    --mono-gradient-0: linear-gradient(0deg, var(--color-3), var(--color-3));
 }
 
 * {
@@ -139,15 +146,22 @@ p {
 
 .section-title {
     color: white;
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    font-size: var(--gr-rem-3);
+    font-weight: 500;
+    line-height: var(--gr-rem-3);
+    letter-spacing: var(--gr-rem-c);
     text-align: center;
-    text-transform: uppercase;
 }
 
 .section-title span {
-    color: var(--color-1);
+    color: var(--accent-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 /* Common Classes Section End */
@@ -214,7 +228,8 @@ p {
     height: 100%;
     width: 0;
 
-    background-color: var(--color-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
 
     animation: text_reveal_box 1s ease;
 }
@@ -239,14 +254,10 @@ p {
     margin-top: var(--gr-rem-1);
     padding: var(--gr-rem-0) var(--gr-rem-1);
 
-    font-size: var(--gr-rem-2);
-    font-weight: 600;
-    line-height: var(--gr-rem-2);
-    text-transform: uppercase;
-
     background-color: transparent;
-
     color: transparent;
+    opacity: 0%;
+
     animation: cta_reveal 1.5s ease forwards;
     animation-delay: 2.5s; 
 
@@ -255,48 +266,74 @@ p {
 }
 
 #hero .cta:hover {
-    background-color: var(--color-1);
+    background-color: var(--color-0);
+}
+
+#hero .cta .resume {
+    font-size: var(--gr-rem-2);
+    font-weight: 600;
+    line-height: var(--gr-rem-2);
+    text-transform: uppercase;
+
+    transition-property: background-color, background-image;
+}
+
+#hero .cta:hover .resume {
+    color: var(--accent-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 /* Hero Section End */
 
 /* Skills Section Start */
-#skills .skills {
-    flex-direction: column;
-
-    text-align: center;
-
-    background-color: green;
+#skills {
+    background-color: var(--color-1);
 }
 
-#skills .skill-top p {
-    color: white;
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
-    text-align: left;
+#skills .skills {
+    padding: var(--gr-rem-3);
+
+    flex-direction: column;
 }
 
 #skills .skill-bottom {
+    margin-top: var(--gr-rem-1);
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    row-gap: var(--gr-rem-0);
 }
 
 #skills .skill-item {
+    border-radius: var(--gr-rem-0);
+
+    border: var(--gr-rem-a) solid transparent;
+
+    background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    background-color: var(--color-2);
-
     overflow: hidden;
+    
 }
 
 #skills .skill-item-header {
+    margin: var(--gr-rem-1);
+
     align-items: center;
     display: flex;
+    column-gap: var(--gr-rem-0);
 }
 
 #skills .skill-item .icon {
@@ -307,16 +344,40 @@ p {
 #skills .skill-item .icon i {
     font-size: var(--gr-rem-4);
     line-height: calc(var(--gr-rem-4) * 0.8755);
+    color: var(--accent-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 #skills .skill-item h2 {
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    font-size: var(--gr-rem-2);
+    font-weight: 500;
+    line-height: var(--gr-rem-2);
+
+    color: var(--accent-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 #skills .skill-item p {
-    background-color: var(--color-3);
+    padding: var(--gr-rem-0);
+
+    font-size: var(--gr-rem-1);
+    font-weight: 300;
+    line-height: var(--gr-rem-1);
+    color: white;
+
+    background-color: var(--color-2);
 }
 
 /* Skill Section Animations */
@@ -373,7 +434,7 @@ p {
     flex-direction: column;
     justify-content: center;
 
-    background-color: var(--color-2);
+    background-color: var(--color-1);
 
     overflow: hidden;
 }
@@ -597,7 +658,14 @@ p {
 
 @keyframes text_reveal_name {
     100% {
-        color: var(--color-1);
+        color: var(--accent-1);
+        background-color: var(--accent-1);
+        background-image: var(--accent-gradient-0);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
     }
 }
 
@@ -615,12 +683,18 @@ p {
 
 @keyframes cta_reveal {
     50% {
-        border: var(--gr-rem-d) solid var(--color-1);
         color: transparent;
+        border-width: var(--gr-rem-d);
+        border-style: solid;
+        opacity: 0%;
     }
     100% {
-        border: var(--gr-rem-d) solid var(--color-1);
+        opacity: 100%;
         color: white;
+        border-image: var(--accent-gradient-0) 30;
+        border-width: var(--gr-rem-d);
+        border-image-slice: 1;
+        border-style: solid;
     }
 }
 
