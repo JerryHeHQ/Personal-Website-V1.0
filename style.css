@@ -43,13 +43,12 @@
     --color-1: #ffbe00;
     --color-2: #f2f2f2;
     --color-3: #e6e6e6;
-
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -62,25 +61,26 @@ a {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    background-color: grey;
 
-    background-color: black;
+    overflow-x: hidden;
 }
 
 img {
     height: 100%;
     width: 100%;
+
     object-fit: cover;
 }
 
 p {
     font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
     text-align: left;
 }
 
-.parallax-background {
+/* .parallax-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -116,71 +116,66 @@ p {
 .main {
     position: relative;
     z-index: 1;
-}
+} */
 
 /* Common Classes Section Start */
-
 .container {
-    display: flex;
     min-height: 100vh;
     width: 100%;
+
     align-items: center;
+    display: flex;
     justify-content: center;
 }
 
-.glass-background {
+/* .glass-background {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
+} */
 
 .section-title {
-    margin-bottom: var(--gr-rem-0);
-
-    font-size: var(--gr-rem-3);
-    font-weight: 500;
-    text-transform: uppercase;
-    text-align: center;
     color: white;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .section-title span {
     color: var(--color-1);
 }
 
-.section-spacer {
-    min-height: calc(var(--golden-ratio-a) * 100vh);
-}
-
 /* Common Classes Section End */
 
 /* Hero Section Start */
-
 #hero {
     position: relative;
     z-index: 1;
 }
 
 #hero .hero {
-    max-width: calc(1920px * var(--golden-ratio-f));
-
-    margin: 0 auto;
-    padding: 0 var(--gr-rem-3);
     justify-content: flex-start;
+
+    background-image: url(/img/Background.png);
+    background-position: top center;
+    background-size: cover;
 }
 
 #hero h1 {
-    /* Hero Text */
     position: relative;
+
     width: fit-content;
 
     display: block;
 
-    font-size: var(--gr-rem-2);
-    font-weight: 700;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
 
     color: transparent;
 
@@ -196,12 +191,11 @@ p {
 }
 
 #hero h1:nth-child(3) {
-    animation: text_reveal_name .5s ease forwards;
     animation-delay: 3s;
+    animation: text_reveal_name .5s ease forwards;
 }
 
 #hero h1 span {
-    /* Hero Text Reveal Box */
     position: absolute;
     top: 0;
     left: 0;
@@ -227,22 +221,19 @@ p {
 }
 
 #hero .cta {
-    /* Resume Download Button */
-    display: inline-block;
-    margin-top: var(--gr-rem-1);
-    padding: var(--gr-rem-0) var(--gr-rem-1);
     border: var(--gr-rem-d) solid var(--color-1);
-
-    font-weight: 600;
-    font-size: var(--gr-rem-1);
-    text-transform: uppercase;
-    letter-spacing: var(--gr-rem-b);
+    display: inline-block;
 
     color: white;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
+    text-transform: uppercase;
+
     background-color: transparent;
 
-    transition: .3s ease;
     transition-property: color, background-color;
+    transition: .3s ease;
 }
 
 #hero .cta:hover {
@@ -252,56 +243,42 @@ p {
 /* Hero Section End */
 
 /* Skills Section Start */
-
 #skills .skills {
-    max-width: calc(1920px * var(--golden-ratio-f));
-
-    margin: 0 auto;
-    padding: var(--gr-rem-0) 0;
     flex-direction: column;
 
     text-align: center;
+
+    background-color: green;
 }
 
 #skills .skill-top p {
-    margin: var(--gr-rem-0) var(--gr-rem-3);
-
-
-    font-size: var(--gr-rem-1);
-    font-weight: 500;
-    line-height: var(--gr-rem-1);
-    text-align: left;
     color: white;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
+    text-align: left;
 }
 
 #skills .skill-bottom {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    margin-top: var(--gr-rem-0);
 }
 
 #skills .skill-item {
+    align-items: flex-start;
     display: flex;
-    /* flex-basis: calc(var(--golden-ratio-f) * 100% + (50% - var(--golden-ratio-f) * 50%)); */
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-
-    margin: var(--gr-rem-0) var(--gr-rem-3);
-    border-radius: var(--gr-rem-0);
 
     background-color: var(--color-2);
+
     overflow: hidden;
 }
 
 #skills .skill-item-header {
-    display: flex;
     align-items: center;
-    column-gap: var(--gr-rem-1);
-
-    padding: var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-0) var(--gr-rem-1);
+    display: flex;
 }
 
 #skills .skill-item .icon {
@@ -315,22 +292,22 @@ p {
 }
 
 #skills .skill-item h2 {
-    font-size: var(--gr-rem-2);
-    font-weight: 800;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
 }
 
 #skills .skill-item p {
-    padding: var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-1);
-    border-radius: 0 0 var(--gr-rem-0) var(--gr-rem-0);
-
     background-color: var(--color-3);
 }
 
 /* Skill Section Animations */
 .hide-skill-item {
-    opacity: 0;
-    transition: all 1s;
     scale: var(--golden-ratio-a);
+
+    transition: all 1s;
+
+    opacity: 0;
 }
 
 .hide-skill-item:nth-child(odd) {
@@ -342,10 +319,12 @@ p {
 }
 
 .show-skill-item {
+    transform: translateY(0);
+
+    scale: 1;
+
     opacity: 1;
     filter: blur(0);
-    transform: translateY(0);
-    scale: 1;
 }
 
 .show-skill-item:nth-child(odd) {
@@ -359,70 +338,59 @@ p {
 /* Skills Section End */
 
 /* Projects Section Start */
-
 #projects .projects {
-    max-width: calc(1920px * var(--golden-ratio-f));
-
-    margin: 0 auto;
-    padding: var(--gr-rem-0) 0;
     flex-direction: column;
 }
 
 #projects .all-projects {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
 #projects .project-item {
+    align-items: flex-start;
     display: flex;
-    /* flex-basis: calc(var(--golden-ratio-f) * 100% + (50% - var(--golden-ratio-f) * 50%)); */
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-
-    margin: var(--gr-rem-0) var(--gr-rem-3);
-    border-radius: var(--gr-rem-0);
 
     background-color: var(--color-2);
+
     overflow: hidden;
 }
 
 #projects .project-info {
     height: 100%;
 
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    padding: var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-0) var(--gr-rem-1);
 
     transition: 1s ease;
 }
 
 #projects .project-info h1 {
-    font-size: var(--gr-rem-2);
-    font-weight: 800;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
 
     transition: 1s ease;
 }
 
 #projects .project-info h2 {
-    margin-top: var(--gr-rem-d);
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
 
-    font-size: var(--gr-rem-1);
-    font-weight: 500;
-
-    transition: 1s ease;
     transition-delay: 0.25s;
+    transition: 1s ease;
 }
 
 #projects .project-info p {
-    margin-top: var(--gr-rem-c);
-
-    transition: 1s ease;
     transition-delay: 0.5s;
+    transition: 1s ease;
 }
 
 #projects .project-img {
@@ -430,12 +398,14 @@ p {
     height: 300px;
 
     object-fit: cover;
-    overflow: hidden;
-    border-radius: var(--gr-rem-0);
 
-    font-size: 0rem;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
 
     transition: 2s ease;
+
+    overflow: hidden;
 }
 
 #projects .project-img img {
@@ -452,8 +422,8 @@ p {
 }
 
 .show-project-item {
-    opacity: 1;
     filter: blur(0);
+    opacity: 1;
 }
 
 .hide-project-item .project-info h1 {
@@ -491,12 +461,7 @@ p {
 /* Projects Section End*/
 
 /* About Section Start */
-
 #about .about {
-    max-width: calc(1920px * var(--golden-ratio-f));
-
-    margin: 0 auto;
-    padding: var(--gr-rem-0) 0;
     flex-direction: column-reverse;
 
     text-align: center;
@@ -511,54 +476,48 @@ p {
 }
 
 #about .col-right h2 {
-    margin: 0 var(--gr-rem-3);
-
-    font-weight: 600;
-    font-size: var(--gr-rem-1);
     color: white;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
 }
 
 #about .col-right p {
-    margin: var(--gr-rem-0) var(--gr-rem-3);
-
-    font-size: var(--gr-rem-1);
-    font-weight: 500;
-    line-height: var(--gr-rem-1);
-    text-align: left;
     color: white;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
+    text-align: left;
 }
 
 #about .col-left .about-img {
     position: relative;
 
-    border-radius: var(--gr-rem-0);
-    overflow: hidden;
-
     font-size: 0;
+
+    overflow: hidden;
 }
 
 /* About Section Animations */
 .hide-about {
-    opacity: 0;
-    transition: all 1s;
     scale: var(--golden-ratio-a);
+
+    transition: all 1s;
+
+    opacity: 0;
 }
 
 .show-about {
-    opacity: 1;
-    filter: blur(0);
     scale: 1;
+
+    filter: blur(0);
+    opacity: 1;
 }
 
 /* About Section End*/
 
 /* Info Section Start */
-
 #info .info {
-    max-width: calc(1920px * var(--golden-ratio-f));
-
-    margin: 0 auto;
-    padding: var(--gr-rem-0) 0;
     flex-direction: column;
 }
 
@@ -568,16 +527,10 @@ p {
 }
 
 #info .info-item {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
-
-    margin: var(--gr-rem-0) var(--gr-rem-3);
-    padding: var(--gr-rem-1);
-    border-radius: var(--gr-rem-0);
-    column-gap: var(--gr-rem-0);
-
     text-align: left;
 
     background-color: white;
@@ -600,15 +553,15 @@ p {
 }
 
 #info .info-text h1 {
-    font-size: var(--gr-rem-2);
-    font-weight: 800;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
 }
 
 #info .info-text h2 {
-    margin-top: var(--gr-rem-d);
-
-    font-size: var(--gr-rem-1);
-    font-weight: 500;
+    font-size: var(--gr-rem-0);
+    font-weight: 300;
+    line-height: var(--gr-rem-0);
 }
 
 #projects .project-item:hover .project-img img {
@@ -618,7 +571,6 @@ p {
 /* Info Section End*/
 
 /* Keyframes Start */
-
 @keyframes text_reveal {
     100% {
         color: white;
