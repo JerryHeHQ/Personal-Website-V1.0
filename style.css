@@ -304,6 +304,7 @@ p {
 #skills .skill-bottom {
     margin-top: var(--gr-rem-1);
 
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -418,23 +419,34 @@ p {
 
 /* Projects Section Start */
 #projects .projects {
+    padding: var(--gr-rem-3);
+
     flex-direction: column;
+
+    background-color: var(--color-1);
 }
 
 #projects .all-projects {
+    margin-top: var(--gr-rem-1);
+
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    row-gap: var(--gr-rem-0);
 }
 
 #projects .project-item {
+    border-radius: var(--gr-rem-0);
+    border: var(--gr-rem-a) solid transparent;
+    background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    background-color: var(--color-1);
 
     overflow: hidden;
 }
@@ -442,7 +454,7 @@ p {
 #projects .project-info {
     height: 100%;
 
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -451,23 +463,44 @@ p {
 }
 
 #projects .project-info h1 {
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    padding: var(--gr-rem-0) var(--gr-rem-0) 0 var(--gr-rem-0);
+
+    font-size: var(--gr-rem-2);
+    font-weight: 500;
+    line-height: var(--gr-rem-2);
+
+    color: var(--accent-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 
     transition: 1s ease;
 }
 
 #projects .project-info h2 {
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    padding: var(--gr-rem-d) var(--gr-rem-0) 0 var(--gr-rem-0);
+
+    font-size: var(--gr-rem-1);
+    font-weight: 700;
+    line-height: var(--gr-rem-1);
+    color: white;
 
     transition-delay: 0.25s;
     transition: 1s ease;
 }
 
 #projects .project-info p {
+    padding: var(--gr-rem-0);
+    
+    font-size: var(--gr-rem-1);
+    font-weight: 300;
+    line-height: var(--gr-rem-1);
+    color: white;
+
     transition-delay: 0.5s;
     transition: 1s ease;
 }
@@ -541,9 +574,13 @@ p {
 
 /* About Section Start */
 #about .about {
+    padding: var(--gr-rem-3);
+
     flex-direction: column-reverse;
 
     text-align: center;
+
+    background-color: var(--color-1);
 }
 
 #about .col-left {
@@ -555,24 +592,36 @@ p {
 }
 
 #about .col-right h2 {
+    margin-top: var(--gr-rem-f);
+
     color: white;
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    font-size: var(--gr-rem-2);
+    font-weight: 500;
+    line-height: var(--gr-rem-2);
 }
 
 #about .col-right p {
+    margin-top: var(--gr-rem-f);
+
     color: white;
-    font-size: var(--gr-rem-0);
+    font-size: var(--gr-rem-1);
     font-weight: 300;
-    line-height: var(--gr-rem-0);
-    text-align: left;
+    line-height: var(--gr-rem-1);
+    text-align: center;
 }
 
 #about .col-left .about-img {
     position: relative;
 
+    margin-top: var(--gr-rem-1);
+
     font-size: 0;
+
+    border-radius: var(--gr-rem-0);
+    border: var(--gr-rem-a) solid transparent;
+    background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 
     overflow: hidden;
 }
