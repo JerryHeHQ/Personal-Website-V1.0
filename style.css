@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
     /* Golden Ratios */
@@ -52,7 +52,7 @@
 }
 
 html {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 12px;
 }
 
@@ -156,26 +156,37 @@ p {
 #hero {
     position: relative;
     z-index: 1;
-}
-
-#hero .hero {
-    justify-content: flex-start;
 
     background-image: url(/img/Background.png);
     background-position: top center;
     background-size: cover;
 }
 
+#hero::after {
+    content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.3;
+	z-index: -1;
+}
+
+#hero .hero {
+    justify-content: flex-start;
+    margin: 0 var(--gr-rem-4);
+}
+
 #hero h1 {
     position: relative;
 
+    display: block;
     width: fit-content;
 
-    display: block;
-
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    font-size: var(--gr-rem-3);
+    font-weight: 700;
 
     color: transparent;
 
@@ -191,8 +202,8 @@ p {
 }
 
 #hero h1:nth-child(3) {
-    animation-delay: 3s;
     animation: text_reveal_name .5s ease forwards;
+    animation-delay: 3s;
 }
 
 #hero h1 span {
@@ -221,16 +232,23 @@ p {
 }
 
 #hero .cta {
-    border: var(--gr-rem-d) solid var(--color-1);
-    display: inline-block;
+    position: relative;
 
-    color: white;
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    border: var(--gr-rem-d) solid transparent;
+    display: inline-block;
+    margin-top: var(--gr-rem-1);
+    padding: var(--gr-rem-0) var(--gr-rem-1);
+
+    font-size: var(--gr-rem-2);
+    font-weight: 600;
+    line-height: var(--gr-rem-2);
     text-transform: uppercase;
 
     background-color: transparent;
+
+    color: transparent;
+    animation: cta_reveal 1.5s ease forwards;
+    animation-delay: 2.5s; 
 
     transition-property: color, background-color;
     transition: .3s ease;
@@ -592,6 +610,17 @@ p {
     100% {
         left: 100%;
         width: 0;
+    }
+}
+
+@keyframes cta_reveal {
+    50% {
+        border: var(--gr-rem-d) solid var(--color-1);
+        color: transparent;
+    }
+    100% {
+        border: var(--gr-rem-d) solid var(--color-1);
+        color: white;
     }
 }
 
