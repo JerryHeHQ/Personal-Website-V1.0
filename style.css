@@ -313,9 +313,7 @@ p {
 
 #skills .skill-item {
     border-radius: var(--gr-rem-0);
-
     border: var(--gr-rem-a) solid transparent;
-
     background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
     background-origin: border-box;
     background-clip: padding-box, border-box;
@@ -645,21 +643,38 @@ p {
 /* About Section End*/
 
 /* Info Section Start */
+#info {
+    background-color: var(--color-1);
+}
+
 #info .info {
+    padding: var(--gr-rem-3);
+
     flex-direction: column;
 }
 
 #info .info-items {
+    margin-top: var(--gr-rem-1);
+
     display: flex;
     flex-direction: column;
+    row-gap: var(--gr-rem-0);
 }
 
 #info .info-item {
+    border-radius: var(--gr-rem-0);
+    border: var(--gr-rem-a) solid transparent;
+    background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
+    padding: var(--gr-rem-0);
+    column-gap: var(--gr-rem-0);
 
     background-color: white;
 
@@ -678,18 +693,36 @@ p {
 #info .icon i {
     font-size: var(--gr-rem-4);
     line-height: calc(var(--gr-rem-4) * 0.8755);
+    color: var(--accent-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 #info .info-text h1 {
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    font-size: var(--gr-rem-2);
+    font-weight: 500;
+    line-height: var(--gr-rem-2);
+
+    color: var(--accent-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 #info .info-text h2 {
-    font-size: var(--gr-rem-0);
+    font-size: var(--gr-rem-1);
     font-weight: 300;
-    line-height: var(--gr-rem-0);
+    line-height: var(--gr-rem-1);
+    color: white;
 }
 
 #projects .project-item:hover .project-img img {
