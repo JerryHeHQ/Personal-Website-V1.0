@@ -160,7 +160,7 @@ p {
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
 
@@ -178,14 +178,14 @@ p {
 
 #hero::after {
     content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background-color: black;
-	opacity: 0.3;
-	z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 #hero .hero {
@@ -201,6 +201,7 @@ p {
 
     font-size: var(--gr-rem-3);
     font-weight: 700;
+    line-height: var(--gr-rem-3);
 
     color: transparent;
 
@@ -259,7 +260,7 @@ p {
     opacity: 0%;
 
     animation: cta_reveal 1.5s ease forwards;
-    animation-delay: 2.5s; 
+    animation-delay: 2.5s;
 
     transition-property: color, background-color;
     transition: .3s ease;
@@ -271,7 +272,7 @@ p {
 
 #hero .cta .resume {
     font-size: var(--gr-rem-2);
-    font-weight: 600;
+    font-weight: 500;
     line-height: var(--gr-rem-2);
     text-transform: uppercase;
 
@@ -284,7 +285,7 @@ p {
     background-image: var(--accent-gradient-0);
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
 
@@ -324,7 +325,7 @@ p {
     justify-content: center;
 
     overflow: hidden;
-    
+
 }
 
 #skills .skill-item-header {
@@ -349,7 +350,7 @@ p {
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
 
@@ -364,7 +365,7 @@ p {
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
 
@@ -381,7 +382,7 @@ p {
 
 /* Skill Section Animations */
 .hide-skill-item {
-    scale: var(--golden-ratio-a);
+    scale: var(--gr-rem-a);
 
     transition: all 1s;
 
@@ -473,7 +474,7 @@ p {
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 
     transition: 1s ease;
@@ -493,7 +494,7 @@ p {
 
 #projects .project-info p {
     padding: var(--gr-rem-0);
-    
+
     font-size: var(--gr-rem-1);
     font-weight: 300;
     line-height: var(--gr-rem-1);
@@ -509,9 +510,7 @@ p {
 
     object-fit: cover;
 
-    font-size: var(--gr-rem-0);
-    font-weight: 300;
-    line-height: var(--gr-rem-0);
+    font-size: 0;
 
     transition: 2s ease;
 
@@ -574,11 +573,19 @@ p {
 #about .about {
     padding: var(--gr-rem-3);
 
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     text-align: center;
 
     background-color: var(--color-1);
+}
+
+#about .columns {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
 }
 
 #about .col-left {
@@ -699,7 +706,7 @@ p {
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
 
@@ -714,7 +721,7 @@ p {
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
 
@@ -725,9 +732,28 @@ p {
     color: white;
 }
 
-#projects .project-item:hover .project-img img {
-    transform: scale(1.1);
+/* Info Section Animations*/
+.hide-info-item {
+    scale: 0;
 }
+
+
+.show-info-item {
+    scale: 1;
+}
+
+.show-info-item:nth-child(1) {
+    animation: info-item-reveal-1 3s ease;
+}
+
+.show-info-item:nth-child(2) {
+    animation: info-item-reveal-2 3s ease;
+}
+
+.show-info-item:nth-child(3) {
+    animation: info-item-reveal-3 3s ease;
+}
+
 
 /* Info Section End*/
 
@@ -746,7 +772,7 @@ p {
         background-size: 100%;
         -webkit-background-clip: text;
         -moz-background-clip: text;
-        -webkit-text-fill-color: transparent; 
+        -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
     }
 }
@@ -770,6 +796,7 @@ p {
         border-style: solid;
         opacity: 0%;
     }
+
     100% {
         opacity: 100%;
         color: white;
@@ -780,4 +807,168 @@ p {
     }
 }
 
+@keyframes info-item-reveal-1 {
+    0% {
+        translate: -50vw;
+    }
+
+    33% {
+        translate: 0px;
+    }
+}
+
+@keyframes info-item-reveal-2 {
+    0% {
+        translate: -50vw;
+    }
+
+    67% {
+        translate: 0px;
+    }
+}
+
+@keyframes info-item-reveal-3 {
+    0% {
+        translate: -50vw;
+    }
+
+    100% {
+        translate: 0px;
+    }
+}
+
 /* Keyframes End*/
+
+/* Tablet Media Query Start */
+
+@media only screen and (min-width:768px) {
+    .section-title {
+        font-size: var(--gr-rem-4);
+        line-height: var(--gr-rem-4);
+    }
+
+    #hero h1 {
+        font-size: var(--gr-rem-4);
+        line-height: var(--gr-rem-4);
+    }
+
+    #hero .cta .resume {
+        font-size: var(--gr-rem-3);
+        line-height: var(--gr-rem-3);
+        text-transform: uppercase;
+    }
+
+    #skills .skill-bottom {
+        row-gap: var(--gr-rem-1);
+        column-gap: var(--gr-rem-0);
+    }
+
+    #skills .skill-bottom .skill-item {
+        flex-basis: 49%;
+    }
+
+    #skills .skill-item h2 {
+        font-size: var(--gr-rem-2);
+        font-weight: 500;
+        line-height: var(--gr-rem-2);
+    }
+
+    #skills .hide-skill-item:nth-child(odd) {
+        translate: -30vw;
+    }
+
+    #skills .hide-skill-item:nth-child(even) {
+        translate: 30vw;
+    }
+
+    #skills .show-skill-item:nth-child(odd) {
+        translate: 0vw;
+    }
+    
+    #skills .show-skill-item:nth-child(even) {
+        translate: 0vw;
+    }
+
+    #projects .project-item {
+        flex-direction: row;
+    }
+
+    #projects .project-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    #projects .project-info {
+        height: 100%;
+        flex: var(--golden-ratio-1) 1 0;
+    }
+
+    #projects .project-img {
+        height: 100%;
+        flex: var(--golden-ratio-0) 1 0;
+    }
+
+    .hide-project-item:nth-child(even) .project-info h1 {
+        translate: 100%;
+    }
+    
+    .show-project-item:nth-child(even) .project-info h1 {
+        translate: 0;
+    }
+
+    .hide-project-item:nth-child(even) .project-info h2 {
+        translate: 100%;
+    }
+    
+    .show-project-item:nth-child(even) .project-info h2 {
+        translate: 0;
+    }
+
+    .hide-project-item:nth-child(even) .project-info p {
+        translate: 100%;
+    }
+    
+    .show-project-item:nth-child(even) .project-info p {
+        translate: 0;
+    }
+
+    .hide-project-item:nth-child(odd) .project-img {
+        translate: 100% 0;
+    }
+
+    .hide-project-item:nth-child(even) .project-img {
+        translate: -100% 0;
+    }
+    
+    .show-project-item:nth-child(odd) .project-img {
+        translate: 0;
+    }
+
+    .show-project-item:nth-child(even) .project-img {
+        translate: 0;
+    }
+
+    #about .columns {
+        display: flex;
+    
+        flex-direction: row;
+        column-gap: var(--gr-rem-0);
+    }
+
+    #about .col-left {
+        flex: var(--golden-ratio-0) 1 0;
+    }
+
+    #about .col-right {
+        flex: var(--golden-ratio-1) 1 0;
+    }
+
+    #about .col-right h2 {
+
+    }
+    
+    #about .col-right p {
+        text-align: left;
+    }
+}
+
+/* Tablet Media Query End */

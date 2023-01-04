@@ -86,3 +86,16 @@ const aboutObserver = new IntersectionObserver((entries) => {
 const hiddenAbout = document.querySelectorAll('.hide-about');
 hiddenAbout.forEach((element) => aboutObserver.observe(element));
 // About Section Scroll Animation End
+
+// Info Section Scroll Animation Start
+const infoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-info-item');
+        }
+    });
+});
+
+const hiddenInfo = document.querySelectorAll('.hide-info-item');
+hiddenInfo.forEach((element) => infoObserver.observe(element));
+// Info Section Scroll Animation End
