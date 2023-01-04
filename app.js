@@ -47,8 +47,6 @@ const skillItemObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show-skill-item');
-        } else {
-            entry.target.classList.remove('show-skill-item');
         }
     });
 });
@@ -62,8 +60,6 @@ const projectItemObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show-project-item');
-        } else {
-            entry.target.classList.remove('show-project-item');
         }
     });
 });
@@ -77,8 +73,6 @@ const aboutObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show-about');
-        } else {
-            entry.target.classList.remove('show-about');
         }
     });
 });

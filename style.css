@@ -70,6 +70,8 @@ a {
 body {
     background-color: grey;
 
+    margin: 0 auto;
+
     overflow-x: hidden;
 }
 
@@ -149,7 +151,7 @@ p {
     font-size: var(--gr-rem-3);
     font-weight: 500;
     line-height: var(--gr-rem-3);
-    letter-spacing: var(--gr-rem-c);
+    letter-spacing: var(--gr-rem-b);
     text-align: center;
 }
 
@@ -190,7 +192,7 @@ p {
 
 #hero .hero {
     justify-content: flex-start;
-    margin: 0 var(--gr-rem-4);
+    margin: 0 auto;
 }
 
 #hero h1 {
@@ -198,6 +200,7 @@ p {
 
     display: block;
     width: fit-content;
+    margin-left: var(--gr-rem-3);
 
     font-size: var(--gr-rem-3);
     font-weight: 700;
@@ -253,6 +256,7 @@ p {
     border: var(--gr-rem-d) solid transparent;
     display: inline-block;
     margin-top: var(--gr-rem-1);
+    margin-left: var(--gr-rem-3);
     padding: var(--gr-rem-0) var(--gr-rem-1);
 
     background-color: transparent;
@@ -275,6 +279,7 @@ p {
     font-weight: 500;
     line-height: var(--gr-rem-2);
     text-transform: uppercase;
+    margin: 0 auto;
 
     transition-property: background-color, background-image;
 }
@@ -294,9 +299,12 @@ p {
 /* Skills Section Start */
 #skills {
     background-color: var(--color-1);
+
+    align-items: center;
 }
 
 #skills .skills {
+    margin: 0 auto;
     padding: var(--gr-rem-3);
 
     flex-direction: column;
@@ -417,12 +425,15 @@ p {
 /* Skills Section End */
 
 /* Projects Section Start */
+#projects {
+    background-color: var(--color-1);
+}
+
 #projects .projects {
+    margin: 0 auto;
     padding: var(--gr-rem-3);
 
     flex-direction: column;
-
-    background-color: var(--color-1);
 }
 
 #projects .all-projects {
@@ -570,22 +581,17 @@ p {
 /* Projects Section End*/
 
 /* About Section Start */
-#about .about {
-    padding: var(--gr-rem-3);
-
-    flex-direction: column;
-
-    text-align: center;
-
+#about {
     background-color: var(--color-1);
 }
 
-#about .columns {
-    display: flex;
+#about .about {
+    margin: 0 auto;
+    padding: var(--gr-rem-3);
 
-    flex-direction: column;
+    flex-direction: column-reverse;
 
-    align-items: center;
+    text-align: center;
 }
 
 #about .col-left {
@@ -655,6 +661,7 @@ p {
 }
 
 #info .info {
+    margin: 0 auto;
     padding: var(--gr-rem-3);
 
     flex-direction: column;
@@ -669,6 +676,8 @@ p {
 }
 
 #info .info-item {
+    width: 100%;
+
     border-radius: var(--gr-rem-0);
     border: var(--gr-rem-a) solid transparent;
     background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
@@ -743,15 +752,15 @@ p {
 }
 
 .show-info-item:nth-child(1) {
-    animation: info-item-reveal-1 3s ease;
+    animation: info-item-reveal-1 1.5s ease-out;
 }
 
 .show-info-item:nth-child(2) {
-    animation: info-item-reveal-2 3s ease;
+    animation: info-item-reveal-2 1.5s ease-out;
 }
 
 .show-info-item:nth-child(3) {
-    animation: info-item-reveal-3 3s ease;
+    animation: info-item-reveal-3 1.5s ease-out;
 }
 
 
@@ -852,6 +861,10 @@ p {
         line-height: var(--gr-rem-4);
     }
 
+    #hero .cta {
+        margin-top: var(--gr-rem-2);
+    }
+
     #hero .cta .resume {
         font-size: var(--gr-rem-3);
         line-height: var(--gr-rem-3);
@@ -859,7 +872,7 @@ p {
     }
 
     #skills .skill-bottom {
-        row-gap: var(--gr-rem-1);
+        row-gap: var(--gr-rem-0);
         column-gap: var(--gr-rem-0);
     }
 
@@ -891,6 +904,7 @@ p {
 
     #projects .project-item {
         flex-direction: row;
+        align-items: center;
     }
 
     #projects .project-item:nth-child(even) {
@@ -947,9 +961,7 @@ p {
         translate: 0;
     }
 
-    #about .columns {
-        display: flex;
-    
+    #about .about {
         flex-direction: row;
         column-gap: var(--gr-rem-0);
     }
@@ -961,10 +973,6 @@ p {
     #about .col-right {
         flex: var(--golden-ratio-1) 1 0;
     }
-
-    #about .col-right h2 {
-
-    }
     
     #about .col-right p {
         text-align: left;
@@ -972,3 +980,91 @@ p {
 }
 
 /* Tablet Media Query End */
+
+/* Desktop Media Query Start */
+@media only screen and (min-width:1200px) {
+    #skills .skill-bottom {
+        row-gap: var(--gr-rem-1);
+        column-gap: var(--gr-rem-1);
+    }
+
+    #skills .skill-item h2 {
+        font-size: var(--gr-rem-3);
+        line-height: var(--gr-rem-3);
+    }
+
+    #projects .all-projects {
+        row-gap: var(--gr-rem-1);
+    }    
+
+    #projects .project-info h1 {
+        font-size: var(--gr-rem-3);
+        line-height: var(--gr-rem-3);
+    }
+    
+    #projects .project-info h2 {
+        font-size: var(--gr-rem-2);
+        line-height: var(--gr-rem-2);
+    }
+
+    #about .about {
+        column-gap: var(--gr-rem-1);
+    }
+
+    #hero .hero {
+        max-width: calc(1920px * (1 - var(--golden-ratio-d)) + var(--gr-rem-3));
+    }
+
+    #skills .skills {
+        max-width: calc(1920px * (1 - var(--golden-ratio-d)) + var(--gr-rem-3));
+    }
+
+    #projects .projects {
+        max-width: calc(1920px * (1 - var(--golden-ratio-d)) + var(--gr-rem-3));
+    }
+
+    #about .about {
+        max-width: calc(1920px * (1 - var(--golden-ratio-d)) + var(--gr-rem-3));
+    }
+
+    #info .info {
+        max-width: calc(1920px * (1 - var(--golden-ratio-d)) + var(--gr-rem-3));
+    }
+
+    #info .info-items {
+        flex-direction: row;
+        row-gap: 0;
+        column-gap: var(--gr-rem-1);
+    }
+
+    @keyframes info-item-reveal-1 {
+        0% {
+            translate: -600px;
+        }
+    
+        50.590% {
+            translate: 0;
+        }
+    }
+    
+    @keyframes info-item-reveal-2 {
+        0% {
+            translate: -893px;
+        }
+    
+        75.295% {
+            translate: 0;
+        }
+    }
+    
+    @keyframes info-item-reveal-3 {
+        0% {
+            translate: -1186px;
+        }
+    
+        100% {
+            translate: 0;
+        }
+    }
+}
+/* Desktop Media Query End */
