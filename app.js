@@ -42,6 +42,34 @@
 // }
 // Parallax Section End
 
+// Header Section Start
+const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+const mobile_menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul a');
+const header = document.querySelector('.header.container');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobile_menu.classList.toggle('active');
+});
+
+mobile_menu_item.forEach(item => {
+    item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobile_menu.classList.remove('active');
+    });
+});
+
+document.addEventListener('scroll', () => {
+    var scroll_position = window.scrollY;
+    if (scroll_position > 600) {
+        header.style.backgroundColor = "var(--color-1)";
+    } else {
+        header.style.backgroundColor = 'transparent';
+    }
+});
+// Header Section End
+
 // Skills Section Scroll Animation Start
 const skillItemObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
