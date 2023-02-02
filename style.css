@@ -56,6 +56,7 @@
     --accent-gradient-0: linear-gradient(135deg, var(--accent-0), var(--accent-1));
     --accent-gradient-radial-0: radial-gradient(circle at top left, var(--accent-0), var(--accent-1));
     --mono-gradient-0: linear-gradient(0deg, var(--color-3), var(--color-3));
+    --card-gradient-0: radial-gradient(transparent, var(--color-2));
 }
 
 * {
@@ -332,7 +333,7 @@ p {
     position: relative;
     z-index: 1;
 
-    background-image: url(/img/Background.png);
+    background-image: url(/img/hero_section_background.jpg);
     background-position: top center;
     background-size: cover;
 }
@@ -481,10 +482,13 @@ p {
 
 #skills .skill-item {
     border-radius: var(--gr-rem-0);
-    border: var(--gr-rem-a) solid transparent;
+    /* border: var(--gr-rem-a) solid transparent;
     background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
     background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background-clip: padding-box, border-box; */
+    background-color: var(--color-1);
+    background-image: var(--card-gradient-0);
+    
 
     align-items: flex-start;
     display: flex;
@@ -544,7 +548,7 @@ p {
     line-height: var(--gr-rem-1);
     color: white;
 
-    background-color: var(--color-2);
+    background-color: transparent;
 }
 
 /* Skill Section Animations */
@@ -607,10 +611,12 @@ p {
 
 #projects .project-item {
     border-radius: var(--gr-rem-0);
-    border: var(--gr-rem-a) solid transparent;
+    /* border: var(--gr-rem-a) solid transparent;
     background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
     background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background-clip: padding-box, border-box; */
+    background-color: var(--color-1);
+    background-image: var(--card-gradient-0);
 
     align-items: flex-start;
     display: flex;
@@ -679,6 +685,7 @@ p {
     height: 300px;
 
     object-fit: cover;
+    border-radius: var(--gr-rem-0);
 
     font-size: 0;
 
@@ -838,10 +845,12 @@ p {
     width: 100%;
 
     border-radius: var(--gr-rem-0);
-    border: var(--gr-rem-a) solid transparent;
+    /* border: var(--gr-rem-a) solid transparent;
     background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
     background-origin: border-box;
-    background-clip: padding-box, border-box;
+    background-clip: padding-box, border-box; */
+    background-color: var(--color-1);
+    background-image: var(--card-gradient-0);
 
     align-items: center;
     display: flex;
@@ -850,8 +859,6 @@ p {
     text-align: left;
     padding: var(--gr-rem-0);
     column-gap: var(--gr-rem-0);
-
-    background-color: white;
 
     transition: .3s ease;
 }

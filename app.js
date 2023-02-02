@@ -62,7 +62,7 @@ mobile_menu_item.forEach(item => {
 
 document.addEventListener('scroll', () => {
     var scroll_position = window.scrollY;
-    if (scroll_position > 600) {
+    if (scroll_position > 250) {
         header.style.backgroundColor = "var(--color-1)";
     } else {
         header.style.backgroundColor = 'transparent';
