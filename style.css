@@ -70,6 +70,8 @@ html {
     font-size: 12px;
 
     scroll-behavior: smooth;
+
+    overflow-x: hidden; 
 }
 
 a {
