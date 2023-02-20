@@ -414,10 +414,12 @@ p {
     position: relative;
 
     border: var(--gr-rem-d) solid transparent;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
+    column-gap: var(--gr-rem-0);
     margin-top: var(--gr-rem-1);
     margin-left: var(--gr-rem-3);
-    padding: var(--gr-rem-0) var(--gr-rem-1);
+    padding: var(--gr-rem-0) var(--gr-rem-0) var(--gr-rem-0) var(--gr-rem-1);
 
     background-color: transparent;
     color: transparent;
@@ -431,7 +433,7 @@ p {
 }
 
 #hero .cta:hover {
-    background-color: var(--color-0);
+    background-color: var(--color-1);
 }
 
 #hero .cta .resume {
@@ -448,6 +450,27 @@ p {
     color: var(--accent-1);
     background-color: var(--accent-1);
     background-image: var(--accent-gradient-0);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+#hero .cta .icon {
+    height: calc(var(--gr-rem-2));
+    width: calc(var(--gr-rem-2));
+}
+
+#hero .cta .icon i {
+    font-size: var(--gr-rem-2);
+    line-height: calc(var(--gr-rem-2));
+}
+
+#hero .cta:hover .icon i {
+    color: var(--accent-1);
+    background-color: var(--accent-1);
+    background-image: var(--accent-gradient-0);
+    background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -508,13 +531,13 @@ p {
 }
 
 #skills .skill-item .icon {
-    height: calc(var(--gr-rem-4) * 0.8755);
-    width: calc(var(--gr-rem-4) * 0.8755);
+    height: calc(var(--gr-rem-4));
+    width: calc(var(--gr-rem-4));
 }
 
 #skills .skill-item .icon i {
     font-size: var(--gr-rem-4);
-    line-height: calc(var(--gr-rem-4) * 0.8755);
+    line-height: calc(var(--gr-rem-4));
     color: var(--accent-1);
     background-color: var(--accent-1);
     background-image: var(--accent-gradient-0);
@@ -541,7 +564,7 @@ p {
 }
 
 #skills .skill-item p {
-    padding: var(--gr-rem-0);
+    padding: 0 var(--gr-rem-1) var(--gr-rem-1) var(--gr-rem-1);
 
     font-size: var(--gr-rem-1);
     font-weight: 300;
@@ -638,7 +661,7 @@ p {
 }
 
 #projects .project-info h1 {
-    padding: var(--gr-rem-0) var(--gr-rem-0) 0 var(--gr-rem-0);
+    padding: var(--gr-rem-0) var(--gr-rem-1) 0 var(--gr-rem-1);
 
     font-size: var(--gr-rem-2);
     font-weight: 500;
@@ -657,7 +680,7 @@ p {
 }
 
 #projects .project-info h2 {
-    padding: var(--gr-rem-d) var(--gr-rem-0) 0 var(--gr-rem-0);
+    padding: var(--gr-rem-d) var(--gr-rem-1) 0 var(--gr-rem-1);
 
     font-size: var(--gr-rem-1);
     font-weight: 700;
@@ -669,7 +692,7 @@ p {
 }
 
 #projects .project-info p {
-    padding: var(--gr-rem-0);
+    padding: var(--gr-rem-1);
 
     font-size: var(--gr-rem-1);
     font-weight: 300;
@@ -770,6 +793,7 @@ p {
 
 #about .col-right h2 {
     margin-top: var(--gr-rem-f);
+    padding: 0 var(--gr-rem-1);
 
     color: white;
     font-size: var(--gr-rem-2);
@@ -779,6 +803,7 @@ p {
 
 #about .col-right p {
     margin-top: var(--gr-rem-f);
+    padding: 0 var(--gr-rem-1);
 
     color: white;
     font-size: var(--gr-rem-1);
@@ -796,9 +821,7 @@ p {
 
     border-radius: var(--gr-rem-0);
     border: var(--gr-rem-a) solid transparent;
-    background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+
 
     overflow: hidden;
 }
@@ -857,7 +880,7 @@ p {
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
-    padding: var(--gr-rem-0);
+    padding: var(--gr-rem-1);
     column-gap: var(--gr-rem-0);
 
     transition: .3s ease;
@@ -1035,6 +1058,16 @@ p {
         font-size: var(--gr-rem-3);
         line-height: var(--gr-rem-3);
         text-transform: uppercase;
+    }
+
+    #hero .cta .icon {
+        height: calc(var(--gr-rem-3));
+        width: calc(var(--gr-rem-3));
+    }
+    
+    #hero .cta .icon i {
+        font-size: var(--gr-rem-3);
+        line-height: calc(var(--gr-rem-3));
     }
 
     #skills .skill-bottom {
