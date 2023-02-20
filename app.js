@@ -42,6 +42,17 @@
 // }
 // Parallax Section End
 
+
+// Set width variable in CSS
+setWidth();
+window.addEventListener('resize', () => {
+    setWidth();
+})
+
+function setWidth() {
+    document.querySelector(':root').style.setProperty('--width', document.body.clientWidth+ 'px');
+}
+
 // Header Section Start
 const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
 const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
@@ -60,14 +71,18 @@ mobile_menu_item.forEach(item => {
     });
 });
 
+setNavBar();
 document.addEventListener('scroll', () => {
+    setNavBar();
+});
+function setNavBar() {
     var scroll_position = window.scrollY;
     if (scroll_position > 250) {
         header.style.backgroundColor = "var(--color-1)";
     } else {
         header.style.backgroundColor = 'transparent';
     }
-});
+}
 // Header Section End
 
 // Skills Section Scroll Animation Start
