@@ -523,6 +523,7 @@ p {
 }
 
 #skills .skill-item {
+    flex-basis: 100%;
     border-radius: var(--gr-rem-0);
     /* border: var(--gr-rem-a) solid transparent;
     background-image: var(--mono-gradient-0), var(--accent-gradient-radial-0);
@@ -587,7 +588,7 @@ p {
 
     font-size: var(--gr-rem-1);
     font-weight: 300;
-    line-height: var(--gr-rem-1);
+    line-height: var(--gr-rem-2);
     color: white;
 
     background-color: transparent;
