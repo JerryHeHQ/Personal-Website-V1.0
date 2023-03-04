@@ -395,7 +395,7 @@ p {
     animation: text_reveal_name .5s ease forwards;
     animation-delay: 3s;
     background-color: transparent;
-    background-image: var(--accent-gradient-0);
+    background-image: transparent;
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -982,7 +982,11 @@ p {
 }
 
 @keyframes text_reveal_name {
+    0% {
+        background-image: var(--accent-gradient-0);
+    }
     100% {
+        background-image: var(--accent-gradient-0);
     }
 }
 
