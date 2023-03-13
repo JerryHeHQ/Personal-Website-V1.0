@@ -1,5 +1,5 @@
 @import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
 
 
 :root {
@@ -61,6 +61,7 @@
 
     /* window width*/
     --width: 0px;
+    --scroll-bar-width: 0px;
 }
 
 * {
@@ -70,7 +71,7 @@
 }
 
 html {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 12px;
 
     scroll-behavior: smooth;
@@ -220,6 +221,7 @@ p {
     font-size: var(--gr-rem-2);
     font-weight: 700;
     line-height: var(--gr-rem-2);
+    text-align: center;
 }
 
 #header .nav-list ul {
@@ -377,6 +379,8 @@ p {
     font-size: var(--gr-rem-3);
     font-weight: 700;
     line-height: var(--gr-rem-3);
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
 
     color: transparent;
 
@@ -459,6 +463,8 @@ p {
     font-size: var(--gr-rem-2);
     font-weight: 500;
     line-height: var(--gr-rem-2);
+    padding-bottom: 0em;
+    margin-bottom: 0em;
     text-transform: uppercase;
     margin: 0 auto;
 
@@ -507,7 +513,7 @@ p {
 
 #skills .skills {
     margin: 0 auto;
-    padding: var(--gr-rem-3);
+    padding: var(--gr-rem-1);
 
     flex-direction: column;
 }
@@ -637,7 +643,7 @@ p {
 
 #projects .projects {
     margin: 0 auto;
-    padding: var(--gr-rem-3);
+    padding: var(--gr-rem-1);
 
     flex-direction: column;
 }
@@ -796,7 +802,7 @@ p {
 
 #about .about {
     margin: 0 auto;
-    padding: var(--gr-rem-3);
+    padding: var(--gr-rem-1);
 
     flex-direction: column-reverse;
 
@@ -871,7 +877,7 @@ p {
 
 #info .info {
     margin: 0 auto;
-    padding: var(--gr-rem-3);
+    padding: var(--gr-rem-1);
 
     flex-direction: column;
 }
@@ -1133,7 +1139,7 @@ p {
 
     #projects .project-img {
         height: 100%;
-        flex: var(--golden-ratio-0) 1 0;
+        flex: var(--golden-ratio-1) 1 0;
     }
 
     .hide-project-item:nth-child(even) .project-info h1 {
@@ -1179,6 +1185,7 @@ p {
     #about .about {
         flex-direction: row;
         column-gap: var(--gr-rem-0);
+        max-width: calc(1920px * (1 - var(--golden-ratio-f)) + var(--gr-rem-3));
     }
 
     #about .col-left {
@@ -1198,6 +1205,12 @@ p {
 
 /* Desktop Media Query Start */
 @media only screen and (min-width:1200px) {
+    #header .container {
+        margin-left: calc(-0.5 * var(--scroll-bar-width));
+        justify-content: center;
+
+    }
+
     #header .hamburger {
         display: none;
     }
@@ -1248,6 +1261,10 @@ p {
         line-height: var(--gr-rem-2);
     }
 
+    #projects .project-img {
+        flex: var(--golden-ratio-0) 1 0;
+    }
+
     #header .nav-bar {
         max-width: calc(1920px * (1 - var(--golden-ratio-d)) + var(--gr-rem-3));
     }
@@ -1265,7 +1282,7 @@ p {
     }
 
     #about .about {
-        max-width: calc(1920px * (1 - var(--golden-ratio-d)) + var(--gr-rem-3));
+        max-width: calc(1920px * (1 - var(--golden-ratio-f)) + var(--gr-rem-3));
         column-gap: var(--gr-rem-1);
     }
 

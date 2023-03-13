@@ -50,7 +50,8 @@ window.addEventListener('resize', () => {
 })
 
 function setWidth() {
-    document.querySelector(':root').style.setProperty('--width', document.body.clientWidth+ 'px');
+    document.querySelector(':root').style.setProperty('--width', document.body.clientWidth + 'px');
+    document.querySelector(':root').style.setProperty('--scroll-bar-width', (window.innerWidth - document.body.clientWidth) + 'px');
 }
 
 // Header Section Start
