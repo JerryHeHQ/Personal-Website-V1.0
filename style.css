@@ -77,6 +77,8 @@ html {
     scroll-behavior: smooth;
 
     overflow-x: hidden; 
+
+    scroll-padding-top: var(--gr-rem-2);
 }
 
 a {
@@ -835,7 +837,7 @@ p {
     font-size: var(--gr-rem-1);
     font-weight: 300;
     line-height: var(--gr-rem-1);
-    text-align: center;
+    text-align: start;
 }
 
 #about .col-left .about-img {
