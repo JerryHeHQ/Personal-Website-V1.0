@@ -1,5 +1,5 @@
 @import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap');
 
 
 :root {
@@ -57,7 +57,7 @@
     --accent-gradient-0: linear-gradient(135deg, var(--accent-0), var(--accent-1));
     --accent-gradient-radial-0: radial-gradient(circle at top left, var(--accent-0), var(--accent-1));
     --mono-gradient-0: linear-gradient(0deg, var(--color-3), var(--color-3));
-    --card-gradient-0: radial-gradient(transparent, var(--color-2));
+    --card-gradient-0: linear-gradient(135deg, var(--color-2), var(--color-2));
 
     /* window width*/
     --width: 0px;
@@ -71,7 +71,7 @@
 }
 
 html {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Anuphan', sans-serif;
     font-size: 12px;
 
     scroll-behavior: smooth;
@@ -199,8 +199,7 @@ p {
 }
 
 #header .header {
-    min-height: 6vh;
-    background-color: transparent;
+    min-height: 2rem;
     transition: .6s ease background-color;
 }
 
@@ -362,7 +361,7 @@ p {
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 0.3;
+    opacity: 0.42;
     z-index: -1;
 }
 
@@ -397,18 +396,6 @@ p {
     animation-delay: 2s;
 }
 
-#hero h1:nth-child(3) {
-    animation: text_reveal_name .5s ease forwards;
-    animation-delay: 3s;
-    background-color: transparent;
-    background-image: transparent;
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
-
 #hero h1 span {
     position: absolute;
     top: 0;
@@ -431,10 +418,6 @@ p {
     animation-delay: 1.5s;
 }
 
-#hero h1:nth-child(3) span {
-    animation-delay: 2.5s;
-}
-
 #hero .cta {
     position: relative;
 
@@ -451,7 +434,7 @@ p {
     opacity: 0%;
 
     animation: cta_reveal 1.5s ease forwards;
-    animation-delay: 2.5s;
+    animation-delay: 1.5s;
 
     transition-property: color, background-color;
     transition: .3s ease;
@@ -467,7 +450,6 @@ p {
     line-height: var(--gr-rem-2);
     padding-bottom: 0em;
     margin-bottom: 0em;
-    text-transform: uppercase;
     margin: 0 auto;
 
     transition-property: background-color, background-image;
@@ -509,6 +491,7 @@ p {
 /* Skills Section Start */
 #skills {
     background-color: var(--color-1);
+
 
     align-items: center;
 }
@@ -720,7 +703,7 @@ p {
 }
 
 #projects .project-info p {
-    padding: var(--gr-rem-1);
+    padding: var(--gr-rem-1) var(--gr-rem-4);
 
     font-size: var(--gr-rem-1);
     font-weight: 300;
@@ -1081,7 +1064,6 @@ p {
     #hero .cta .resume {
         font-size: var(--gr-rem-3);
         line-height: var(--gr-rem-3);
-        text-transform: uppercase;
     }
 
     #hero .cta .icon {
