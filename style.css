@@ -3,6 +3,9 @@
 
 
 :root {
+    /* I was way too into the golden ratios at the time, probably not the best
+    design choice, but it was an interesting experience only using these.*/
+
     /* Golden Ratios */
     --golden-ratio-a: 00.056;
     --golden-ratio-b: 00.090;
@@ -169,8 +172,6 @@ p {
     color: white;
     font-size: var(--gr-rem-3);
     font-weight: 500;
-    line-height: var(--gr-rem-3);
-    letter-spacing: var(--gr-rem-b);
     text-align: center;
 }
 
@@ -803,17 +804,16 @@ p {
 }
 
 #about .col-right h2 {
-    margin-top: var(--gr-rem-f);
     padding: 0 var(--gr-rem-1);
 
     color: white;
     font-size: var(--gr-rem-2);
-    font-weight: 500;
+    font-weight: 100;
     line-height: var(--gr-rem-2);
 }
 
-#about .col-right p {
-    margin-top: var(--gr-rem-f);
+#about .col-right ul {
+    margin-top: var(--gr-rem-1);
     padding: 0 var(--gr-rem-1);
 
     color: white;
@@ -821,6 +821,8 @@ p {
     font-weight: 300;
     line-height: var(--gr-rem-1);
     text-align: center;
+
+    list-style-position: inside;
 }
 
 #about .col-left .about-img {
@@ -1180,8 +1182,10 @@ p {
         flex: var(--golden-ratio-1) 1 0;
     }
     
-    #about .col-right p {
-        text-align: left;
+    #about .col-right ul {
+        text-align: start;
+        list-style-position: outside;
+        padding-left: var(--gr-rem-2);
     }
 }
 
