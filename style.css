@@ -171,6 +171,7 @@ p {
 .section-title {
     color: white;
     font-size: var(--gr-rem-3);
+    line-height: var(--gr-rem-3);
     font-weight: 500;
     text-align: center;
 }
@@ -695,7 +696,7 @@ p {
     padding: var(--gr-rem-d) var(--gr-rem-1) 0 var(--gr-rem-1);
 
     font-size: var(--gr-rem-1);
-    font-weight: 700;
+    font-weight: 100;
     line-height: var(--gr-rem-1);
     color: white;
 
@@ -703,7 +704,7 @@ p {
     transition: 1s ease;
 }
 
-#projects .project-info p {
+#projects .project-info ul {
     padding: var(--gr-rem-1) var(--gr-rem-4);
 
     font-size: var(--gr-rem-1);
@@ -804,8 +805,6 @@ p {
 }
 
 #about .col-right h2 {
-    padding: 0 var(--gr-rem-1);
-
     color: white;
     font-size: var(--gr-rem-2);
     font-weight: 100;
@@ -1050,8 +1049,8 @@ p {
 
 @media only screen and (min-width:768px) {
     .section-title {
-        font-size: var(--gr-rem-4);
-        line-height: var(--gr-rem-4);
+        font-size: var(--gr-rem-3);
+        line-height: var(--gr-rem-3);
     }
 
     #hero h1 {
