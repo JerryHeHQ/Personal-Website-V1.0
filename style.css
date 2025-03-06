@@ -1127,7 +1127,7 @@ p {
         flex: var(--golden-ratio-1) 1 0;
     }
 
-    .hide-project-item:nth-child(even) .project-info h1 {
+    /* .hide-project-item:nth-child(even) .project-info h1 {
         translate: 100%;
     }
     
@@ -1149,7 +1149,7 @@ p {
     
     .show-project-item:nth-child(even) .project-info p {
         translate: 0;
-    }
+    } */
 
     .hide-project-item:nth-child(odd) .project-img {
         translate: 100% 0;
