@@ -748,7 +748,7 @@ p {
     opacity: 1;
 }
 
-.hide-project-item .project-info h1 {
+/* .hide-project-item .project-info h1 {
     translate: -100%;
 }
 
@@ -769,8 +769,8 @@ p {
 }
 
 .show-project-item .project-info p {
-    translate: 0;
-}
+    translate: 0; */
+/* } */
 
 .hide-project-item .project-img {
     translate: 0 100%;
