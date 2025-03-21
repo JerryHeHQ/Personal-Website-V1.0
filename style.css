@@ -507,11 +507,11 @@ p {
 
 #skills .skill-bottom {
     margin-top: var(--gr-rem-1);
+    width: 100%;
 
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     row-gap: var(--gr-rem-0);
 }
 
@@ -524,6 +524,8 @@ p {
     background-clip: padding-box, border-box; */
     background-color: var(--color-1);
     background-image: var(--card-gradient-0);
+
+    padding: var(--gr-rem-2);
     
 
     align-items: flex-start;
@@ -537,8 +539,10 @@ p {
 
 #skills .skill-item-header {
     margin: var(--gr-rem-1);
+    width: calc(100% - 2*var(--gr-rem-1));
 
     align-items: center;
+    justify-content: center;
     display: flex;
     column-gap: var(--gr-rem-0);
 }
