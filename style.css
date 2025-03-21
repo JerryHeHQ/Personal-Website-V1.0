@@ -3,8 +3,9 @@
 
 
 :root {
-    /* I was way too into the golden ratios at the time, probably not the best
-    design choice, but it was an interesting experience only using these.*/
+    /* NOTE: I was WAY too into the golden ratios at the time, definitely not
+    the best design choice, but it was an interesting experience only using
+    these values. */
 
     /* Golden Ratios */
     --golden-ratio-a: 00.056;
@@ -1233,23 +1234,23 @@ p {
         column-gap: var(--gr-rem-1);
     }
 
-    #skills .skill-item h2 {
+    /* #skills .skill-item h2 {
         font-size: var(--gr-rem-3);
         line-height: var(--gr-rem-3);
-    }
+    } */
 
     #projects .all-projects {
         row-gap: var(--gr-rem-1);
     }    
 
     #projects .project-info h1 {
-        font-size: var(--gr-rem-3);
-        line-height: var(--gr-rem-3);
+        font-size: var(--gr-rem-2);
+        line-height: var(--gr-rem-2);
     }
     
     #projects .project-info h2 {
-        font-size: var(--gr-rem-2);
-        line-height: var(--gr-rem-2);
+        font-size: var(--gr-rem-1);
+        line-height: var(--gr-rem-1);
     }
 
     #projects .project-img {
